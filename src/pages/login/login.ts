@@ -35,6 +35,7 @@ export class LoginPage {
         }
     }, (err) => {
       // Error log
+        this.helper.gapAlert('Error en logueao', err);
     });
   }
 
