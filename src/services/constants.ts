@@ -1,0 +1,1 @@
+export var Constants = { API_ENDPOINT : 'http://www.esferasoluciones.com/api/superlist/' };
