@@ -136,6 +136,7 @@ var LoginPage = (function () {
             if (_this.responseData.status == "ok") {
                 //loginObjects();
                 //localStorage.setItem('loginData', JSON.stringify(this.responseData));
+                _this.helper.gapAlert('Usuario logueado', 'Login successful');
                 localStorage.setItem('userEmail', _this.responseData.loggedUserEmail);
                 localStorage.setItem('UserLoggedIn', 'true');
                 _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);

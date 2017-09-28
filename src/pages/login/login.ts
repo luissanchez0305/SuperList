@@ -26,6 +26,7 @@ export class LoginPage {
         if (this.responseData.status == "ok") {
             //loginObjects();
             //localStorage.setItem('loginData', JSON.stringify(this.responseData));
+            this.helper.gapAlert('Usuario logueado', 'Login successful');
             localStorage.setItem('userEmail', this.responseData.loggedUserEmail);
             localStorage.setItem('UserLoggedIn', 'true');
             this.navCtrl.push(HomePage);
