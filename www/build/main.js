@@ -146,6 +146,7 @@ var LoginPage = (function () {
             }
         }, function (err) {
             // Error log
+            _this.helper.gapAlert('Error en logueao', err);
         });
     };
     return LoginPage;
