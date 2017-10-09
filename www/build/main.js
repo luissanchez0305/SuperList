@@ -130,7 +130,7 @@ var LoginPage = (function () {
     LoginPage.prototype.attemptUserLogin = function () {
         var _this = this;
         var data = { type: 'cred', e: this.loginData.email, p: this.loginData.password };
-        this.authService.postData(data, 'login_user.php').then(function (result) {
+        this.authService.postData(data, '/controllers/user.php').then(function (result) {
             _this.responseData = result;
             console.log(_this.responseData);
             if (_this.responseData.status == "ok") {
@@ -139,7 +139,7 @@ var LoginPage = (function () {
                 _this.helper.gapAlert('Usuario logueado', 'Login successful');
                 localStorage.setItem('userEmail', _this.responseData.loggedUserEmail);
                 localStorage.setItem('UserLoggedIn', 'true');
-                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
             }
             else {
                 _this.helper.gapAlert("Username or password not valid", "Login Unsuccessful");

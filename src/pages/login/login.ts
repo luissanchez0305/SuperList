@@ -20,7 +20,7 @@ export class LoginPage {
     
     attemptUserLogin() {
         var data = { type : 'cred', e : this.loginData.email, p : this.loginData.password };
-        this.authService.postData(data,'login_user.php').then((result) => {
+        this.authService.postData(data,'/controllers/user.php').then((result) => {
         this.responseData = result;
         console.log(this.responseData);
         if (this.responseData.status == "ok") {
@@ -29,7 +29,7 @@ export class LoginPage {
             this.helper.gapAlert('Usuario logueado', 'Login successful');
             localStorage.setItem('userEmail', this.responseData.loggedUserEmail);
             localStorage.setItem('UserLoggedIn', 'true');
-            this.navCtrl.push(HomePage);
+            this.navCtrl.setRoot(HomePage);
         } else {
             this.helper.gapAlert("Username or password not valid", "Login Unsuccessful");
         }
