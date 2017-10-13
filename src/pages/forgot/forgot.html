@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Recuperar mi contraseña</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div ng-show="true">
+
+        <div class="list card cardprogram">
+            <form [formGroup]="forgot" (ngSubmit)="attemptUserForgot()">
+            <div class="item item-body">
+                <label class="lorems lorems-content">
+                   Por favor introduce el email de tu cuenta
+                </label>
+                <br/>
+                <br/>
+                <ion-item>
+                    <ion-input type="text" placeholder="Email" autocapitalize="none"></ion-input>
+                </ion-item>
+                <br>
+                <input type="submit" class="button button-calm" value="Enviar" [disabled]="!forgot.valid"/>
+                <br>
+                <br>
+                <div ion-button (click)="openRegister()">
+                    REGISTRARSE
+                </div>
+                <div ion-button (click)="openLogin()">
+                    LOGIN
+                </div>
+
+            </div>
+            </form>
+        </div>
+
+    </div>
+</ion-content>

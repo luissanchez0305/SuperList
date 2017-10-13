@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registrarse</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div ng-show="true">
+
+        <div class="list card cardprogram">
+            <form [formGroup]="register" (ngSubmit)="attemptUserRegister()">
+            <div class="item item-body">
+                <label class="lorems lorems-content">
+                   Por favor llene sus datos en el siguiente formulario
+                </label>
+                <br/>
+                <br/>
+                <ion-item>
+                    <ion-input type="text" placeholder="Email*" autocapitalize="none" formControlName="email"></ion-input>
+                </ion-item>
+                <br/>
+                <ion-item>
+                    <ion-input type="text" placeholder="Nombre" formControlName="name"></ion-input>
+                </ion-item>
+                <br>  
+                <ion-item>
+                    <ion-input type="password" placeholder="Contraseña*" formControlName="pwd"></ion-input>
+                </ion-item>
+                <br>
+                <input type="submit" class="button button-calm" value="REGISTRAR" [disabled]="!register.valid"/>
+                <br>
+                <br>
+                <div ion-button (click)="openLogin()">
+                    LOGIN
+                </div>
+                <div ion-button (click)="openForgot()">
+                    RECUPERAR MI CONTRASEÑA
+                </div>
+
+            </div>
+            </form>
+        </div>
+
+    </div>
+</ion-content>

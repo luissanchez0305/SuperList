@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
   constructor(public http : Http) {
-    console.log('Hello AuthService Provider');
   }
 
   postData(credentials, type) {
