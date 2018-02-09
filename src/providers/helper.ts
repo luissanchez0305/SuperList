@@ -1,9 +1,20 @@
 import {Injectable} from '@angular/core';
 import { Dialogs } from '@ionic-native/dialogs';
+import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class HelperService { 
-    constructor(private dialogs: Dialogs) { }
+    loginState: boolean;
+    constructor(private storage : Storage, private dialogs: Dialogs) { 
+        this.storage.get('userEmail').then((user) => {
+            if(user){
+              this.loginState = true;
+            }
+            else{
+              this.loginState = false;
+            }
+        });
+    }
     
     gapAlert(message, title) {
         this.dialogs.alert(

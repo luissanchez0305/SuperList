@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Dialogs } from '@ionic-native/dialogs';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -28,6 +29,7 @@ import { HelperService } from '../providers/helper'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpModule
   ],
   bootstrap: [IonicApp],

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
@@ -18,7 +19,8 @@ export class RegisterPage {
     private register : FormGroup;
     responseData : any;
 
-    constructor(public navCtrl : NavController, public authService : AuthService, public helper : HelperService, private formBuilder: FormBuilder) {
+    constructor(public navCtrl : NavController, public authService : AuthService, public helper : HelperService, private formBuilder: FormBuilder,
+        private storage : Storage) {
         this.register = this.formBuilder.group({
           email: ['', Validators.compose([Validators.required, Validators.pattern('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/')])],
           name: [''],
@@ -42,10 +44,10 @@ export class RegisterPage {
             console.log(this.responseData);
             if (this.responseData.status == "ok") {
                 //loginObjects();
-                //localStorage.setItem('loginData', JSON.stringify(this.responseData));
+                //this.storage.set('loginData', JSON.stringify(this.responseData));
                 this.helper.gapAlert('Usuario logueado', 'Login successful');
-                localStorage.setItem('userEmail', this.responseData.loggedUserEmail);
-                localStorage.setItem('UserLoggedIn', 'true');
+                this.storage.set('userEmail', this.responseData.loggedUserEmail);
+                this.storage.set('UserLoggedIn', 'true');
                 this.navCtrl.setRoot(HomePage);
             } else {
                 this.helper.gapAlert("Username or password not valid", "Login Unsuccessful");
