@@ -8,6 +8,8 @@ import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { Constants } from '../services/constants';
 
 @Component({
   templateUrl: 'app.html'
@@ -37,6 +39,7 @@ export class MyApp {
     ];
     // used for an example of ngFor and navigation
     this.pagesLogout = [
+      { title: 'Perfil', component: RegisterPage, method:''},
       { title: 'Home', component: HomePage, method:'' },
       { title: 'List', component: ListPage, method:''},
       { title: 'Logout', component: LoginPage, method:'logout' }
@@ -54,8 +57,11 @@ export class MyApp {
   }
   
   logout(){
-    this.storage.set('userEmail', '');
-    this.storage.set('UserLoggedIn', 'false');
+    let view = this.nav.getActive();
+    if(view.name == 'RegisterPage')
+      this.nav.setRoot(HomePage);
+    this.storage.set(Constants.USER_EMAIL, '');
+    this.storage.set(Constants.USER_LOGGEDIN, 'false');
     this.helper.loginState = this.loginState = false;
   }
 

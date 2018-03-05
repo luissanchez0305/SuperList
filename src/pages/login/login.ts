@@ -8,6 +8,7 @@ import { ForgotPage } from '../forgot/forgot';
 import { RegisterPage } from '../register/register';
 import { HelperService } from '../../providers/helper';
 import { AuthService } from '../../providers/auth-service';
+import { Constants } from '../../services/constants';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
@@ -37,15 +38,15 @@ export class LoginPage {
     
     attemptUserLogin() {
         var data = { type : 'cred', e : this.login.value.email, p : this.login.value.pwd };
-        this.authService.postData(data,'/controllers/user.php').then((result) => {
+        this.authService.postData(data,'controllers/user.php').then((result) => {
             this.responseData = result;
             console.log(this.responseData);
             if (this.responseData.status == "ok") {
                 //loginObjects();
                 //this.storage.set('loginData', JSON.stringify(this.responseData));
                 this.helper.gapAlert('Usuario logueado', 'Login successful');
-                this.storage.set('userEmail', this.responseData.loggedUserEmail);
-                this.storage.set('UserLoggedIn', 'true');
+                this.storage.set(Constants.USER_EMAIL, this.responseData.loggedUserEmail);
+                this.storage.set(Constants.USER_LOGGEDIN, 'true');
                 this.events.publish("loginEvent");
                 this.navCtrl.setRoot(HomePage);
             } else {

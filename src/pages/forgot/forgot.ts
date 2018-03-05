@@ -1,30 +1,34 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Storage } from '@ionic/storage';
-
-import { LoginPage } from '../login/login';
-import { RegisterPage } from '../register/register';
 import { HelperService } from '../../providers/helper';
 import { AuthService } from '../../providers/auth-service';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/toPromise';
+import { LoginPage } from '../login/login';
+import { RegisterPage } from '../register/register';
 
+/**
+ * Generated class for the ForgotPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
   selector: 'page-forgot',
-  templateUrl: 'forgot.html'
+  templateUrl: 'forgot.html',
 })
 export class ForgotPage {
     private forgot : FormGroup;
-    responseData : any;
+    showSent: boolean = false;
 
-    constructor(public navCtrl : NavController, public authService : AuthService, public helper : HelperService, private formBuilder: FormBuilder,
-        private storage : Storage) {
-        this.forgot = this.formBuilder.group({
-          email: ['', Validators.required]
-        });
+    constructor(public navCtrl: NavController, public authService : AuthService, public helper : HelperService, public navParams: NavParams, private formBuilder: FormBuilder) {
+          this.forgot = this.formBuilder.group({
+            email: ['', Validators.required]
+          });
+          this.showSent = false;
     }
-    
+      
     openLogin(){
         this.navCtrl.setRoot(LoginPage);
     }
@@ -34,23 +38,12 @@ export class ForgotPage {
     }
     
     attemptUserForgot() {
-    /*    var data = { type : 'cred', e : this.loginData.email, p : this.loginData.password };
-        this.authService.postData(data,'/controllers/user.php').then((result) => {
-        this.responseData = result;
-        console.log(this.responseData);
-        if (this.responseData.status == "ok") {
-            //loginObjects();
-            //localStorage.set('loginData', JSON.stringify(this.responseData));
-            this.helper.gapAlert('Usuario logueado', 'Login successful');
-            this.storage.set('userEmail', this.responseData.loggedUserEmail);
-            this.storage.set('UserLoggedIn', 'true');
-            this.navCtrl.setRoot(HomePage);
-        } else {
-            this.helper.gapAlert("Username or password not valid", "Login Unsuccessful");
-        }
+      var data = { type : 'cred', e : this.forgot.value.email };
+        this.authService.postData(data,'mail.php').then((result) => {
+          this.showSent = true;
       }, (err) => {
         // Error log
         this.helper.gapAlert('Error en logueao', err);
-      });*/
+      });
     }
 }

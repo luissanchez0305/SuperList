@@ -1,0 +1,7 @@
+- crear pantalla de perfil
+- crear mapeo y controladores de tablas de recetas
+- crear despliegue de lista de recetas
+- crear despliegue de 1 recetas
+- crear despliegue de dashboard
+- despliegue de carrusel de recetas del dia (automatico)
+- despliegue de carrusel del listas pendientes (estatico)

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Events } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { HelperService } from '../../providers/helper';
+import { Constants } from '../../services/constants';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +10,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public helper : HelperService, private storage : Storage, 
+    public events : Events) {
+    this.storage.get(Constants.USER_LOGGEDIN).then((value)=>{
+      if(value=='true'){
+        this.events.publish("loginEvent");
+      }
+    });
   }
 
 }
