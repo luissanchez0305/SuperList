@@ -1,3 +1,16 @@
 page-home {
-
+.recipes{
+    .recipe{ 
+        .image{    
+            min-width: 100% !important;
+            min-height: 170px !important;
+        }
+        .title{
+            position: absolute;
+            left: 0;
+            background-color: #f0f0f0;
+            padding: 0px 10px;
+        }
+    }
+}
 }

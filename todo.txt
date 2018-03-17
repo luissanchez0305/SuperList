@@ -5,3 +5,12 @@
 - crear despliegue de dashboard
 - despliegue de carrusel de recetas del dia (automatico)
 - despliegue de carrusel del listas pendientes (estatico)
+
+LISTADO DE RECETAS
+- hacer html de cadad item
+- poner fotos
+- poner la informacion de base de datos
+- hacer botones de favoritos, nivel de preccio, compartir y tiempo de ejecucion
+
+RECETA
+- 

@@ -381,7 +381,49 @@ HelperService = __decorate([
 var Constants = {
     API_ENDPOINT: 'https://www.esferasoluciones.com/api/superlist/',
     USER_EMAIL: 'userEmail',
-    USER_LOGGEDIN: 'UserLoggedIn'
+    USER_LOGGEDIN: 'UserLoggedIn',
+    OFFLINE_DATA: [
+        {
+            id: "1",
+            name: "Mini Pizzas",
+            time: "35",
+            favorites: "12",
+            pricelevel: "low",
+            image: "image1.jpg"
+        },
+        {
+            id: "2",
+            name: "Arroz Chorrerano",
+            time: "75",
+            favorites: "5",
+            pricelevel: "medium",
+            image: "image2.jpg"
+        },
+        {
+            id: "3",
+            name: "Hamburguesa Big",
+            time: "45",
+            favorites: "25",
+            pricelevel: "low",
+            image: "image3.jpg"
+        },
+        {
+            id: "4",
+            name: "Arroz con Vegetales",
+            time: "60",
+            favorites: "10",
+            pricelevel: "medium",
+            image: "image4.jpg"
+        },
+        {
+            id: "5",
+            name: "Pizza",
+            time: "50",
+            favorites: "24",
+            pricelevel: "high",
+            image: "image5.jpg"
+        },
+    ]
 };
 //# sourceMappingURL=constants.js.map
 
@@ -570,12 +612,15 @@ var HomePage = (function () {
                 _this.events.publish("loginEvent");
             }
         });
+        this.recipes = __WEBPACK_IMPORTED_MODULE_4__services_constants__["a" /* Constants */].OFFLINE_DATA;
     }
+    HomePage.prototype.ionViewDidLoad = function () {
+    };
     return HomePage;
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h3>Ionic Menu Starter</h3>\n\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.\n  </p>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item>\n    <ion-input type="text" placeholder="Buscar receta"></ion-input>\n  </ion-item>\n  \n  <ion-list class="recipes">\n    <ion-item class="recipe center" *ngFor="let recipe of recipes" nav-transition="ios" nav-direction="forward">\n      <div class="top">\n        <ion-img src="images/{{ recipe.image }}" class="image"></ion-img>\n        <label class="title">{{ recipe.name }}</label>\n      </div>\n      <div class="bottom">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-33 class="favorites">\n              <ion-icon ios="ios-star" md="md-star"></ion-icon>{{ recipe.favorites }}\n            </ion-col>\n            <ion-col col-33 class="share">\n              <ion-icon ios="ios-share" md="md-share"></ion-icon>\n            </ion-col>\n            <ion-col col-33 class="pricelevel">\n              <ion-icon ios="ios-cash" md="md-cash"></ion-icon>{{ recipe.pricelevel }}\n            </ion-col>\n            <ion-col col-33 class="time">\n              <ion-icon ios="ios-timer" md="md-timer"></ion-icon>{{ recipe.time }}mins\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_helper__["a" /* HelperService */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])

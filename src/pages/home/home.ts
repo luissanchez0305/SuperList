@@ -9,7 +9,8 @@ import { Constants } from '../../services/constants';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+    private recipes : any;
+  
   constructor(public navCtrl: NavController, public helper : HelperService, private storage : Storage, 
     public events : Events) {
     this.storage.get(Constants.USER_LOGGEDIN).then((value)=>{
@@ -17,6 +18,10 @@ export class HomePage {
         this.events.publish("loginEvent");
       }
     });
+    this.recipes = Constants.OFFLINE_DATA;
+  }
+  
+  ionViewDidLoad(){
   }
 
 }
