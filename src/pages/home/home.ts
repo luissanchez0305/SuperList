@@ -3,6 +3,7 @@ import { NavController, Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { HelperService } from '../../providers/helper';
 import { Constants } from '../../services/constants';
+import { RecipePage } from '../recipe/recipe';
 
 @Component({
   selector: 'page-home',
@@ -24,4 +25,7 @@ export class HomePage {
   ionViewDidLoad(){
   }
 
+  openRecipe(id){
+    this.navCtrl.push(RecipePage, { recipe: id });
+  }
 }

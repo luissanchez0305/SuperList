@@ -8,7 +8,7 @@ export var Constants = {
             name:"Mini Pizzas",
             time:"35",
             favorites:"12",
-            pricelevel:"low",
+            pricelevel:"secondary",
             image:"image1.jpg"
         },
         {
@@ -16,7 +16,7 @@ export var Constants = {
             name:"Arroz Chorrerano",
             time:"75",
             favorites:"5",
-            pricelevel:"medium",
+            pricelevel:"bright",
             image:"image2.jpg"
         },
         {
@@ -24,7 +24,7 @@ export var Constants = {
             name:"Hamburguesa Big",
             time:"45",
             favorites:"25",
-            pricelevel:"low",
+            pricelevel:"secondary",
             image:"image3.jpg"
         },
         {
@@ -32,7 +32,7 @@ export var Constants = {
             name:"Arroz con Vegetales",
             time:"60",
             favorites:"10",
-            pricelevel:"medium",
+            pricelevel:"bright",
             image:"image4.jpg"
         },
         {
@@ -40,7 +40,7 @@ export var Constants = {
             name:"Pizza",
             time:"50",
             favorites:"24",
-            pricelevel:"high",
+            pricelevel:"danger",
             image:"image5.jpg"
         },
     ]

@@ -14,11 +14,11 @@
   
   <ion-list class="recipes">
     <ion-item class="recipe center" *ngFor="let recipe of recipes" nav-transition="ios" nav-direction="forward">
-      <div class="top">
+      <div class="top" (click)="openRecipe(recipe.id)">
         <ion-img src="images/{{ recipe.image }}" class="image"></ion-img>
         <label class="title">{{ recipe.name }}</label>
       </div>
-      <div class="bottom">
+      <div class="bottom" (click)="openRecipe(recipe.id)">
         <ion-grid>
           <ion-row>
             <ion-col col-33 class="favorites">
@@ -28,7 +28,7 @@
               <ion-icon ios="ios-share" md="md-share"></ion-icon>
             </ion-col>
             <ion-col col-33 class="pricelevel">
-              <ion-icon ios="ios-cash" md="md-cash"></ion-icon>{{ recipe.pricelevel }}
+              <ion-icon color="{{ recipe.pricelevel }}" ios="logo-usd" md="logo-usd"></ion-icon>
             </ion-col>
             <ion-col col-33 class="time">
               <ion-icon ios="ios-timer" md="md-timer"></ion-icon>{{ recipe.time }}mins

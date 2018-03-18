@@ -25203,6 +25203,10 @@ input[type="submit"][disabled] {
   opacity: 0.3;
 }
 
+.icon-ios-bright {
+  color: #E5C832;
+}
+
 page-home .recipes .recipe .image {
   min-width: 100% !important;
   min-height: 170px !important;
