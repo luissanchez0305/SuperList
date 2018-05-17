@@ -7,6 +7,7 @@ webpackJsonp([2],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecipePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_constants__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16,6 +17,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -29,6 +31,7 @@ var RecipePage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         console.log(navParams.get('recipe'));
+        this.recipe = __WEBPACK_IMPORTED_MODULE_2__services_constants__["a" /* Constants */].OFFLINE_RECIPE_DATA;
     }
     RecipePage.prototype.ionViewDidLoad = function () {
     };
@@ -37,11 +40,12 @@ var RecipePage = (function () {
 RecipePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-recipe',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/recipe/recipe.html"*/'<!--\n  Generated template for the RecipePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>recipe</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/recipe/recipe.html"*/,
+        selector: 'page-recipe',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\recipe\recipe.html"*/'<!--\n\n  Generated template for the RecipePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{ recipe.name }}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div>\n\n    Ingredientes\n\n  </div>\n\n  <ion-list>\n\n    <ion-item *ngFor="let ingredient of recipe.ingredients" nav-transition="ios" nav-direction="forward">\n\n        {{ ingredient }}\n\n    </ion-item>\n\n  </ion-list>\n\n  <div>\n\n    Que tengo que hacer?\n\n  </div>\n\n  <ion-list>\n\n    <div>\n\n        Instrucciones\n\n    </div>\n\n    <ion-item *ngFor="let step of recipe.steps" nav-transition="ios" nav-direction="forward">\n\n        {{ step }}\n\n    </ion-item>\n\n  </ion-list>\n\n  <div>\n\n    Otras recetas que me pueden gustar...\n\n  </div>\n\n  <ion-list>\n\n    <ion-item *ngFor="let other of recipe.others" nav-transition="ios" nav-direction="forward">\n\n        {{ other.name }}\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\recipe\recipe.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
 ], RecipePage);
 
+var _a, _b;
 //# sourceMappingURL=recipe.js.map
 
 /***/ }),
@@ -138,7 +142,7 @@ var ListPage = ListPage_1 = (function () {
 }());
 ListPage = ListPage_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-list',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-right>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/list/list.html"*/
+        selector: 'page-list',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\list\list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n\n      {{item.title}}\n\n      <div class="item-note" item-right>\n\n        {{item.note}}\n\n      </div>\n\n    </button>\n\n  </ion-list>\n\n  <div *ngIf="selectedItem" padding>\n\n    You navigated here from <b>{{selectedItem.title}}</b>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\list\list.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
 ], ListPage);
@@ -225,12 +229,7 @@ AppModule = __decorate([
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */], {}, {
-                links: [
-                    { loadChildren: '../pages/recipe/recipe.module#RecipePageModule', name: 'RecipePage', segment: 'recipe', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/forgot/forgot.module#ForgotPageModule', name: 'ForgotPage', segment: 'forgot', priority: 'low', defaultHistory: [] }
-                ]
-            }),
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */]),
             __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_14__angular_http__["c" /* HttpModule */]
         ],
@@ -361,7 +360,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/ubuntu/workspace/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list *ngIf="loginState != true">\n      <button menuClose ion-item *ngFor="let p of pagesLogin" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n    <ion-list *ngIf="loginState == true">\n      <button menuClose ion-item *ngFor="let p of pagesLogout" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/ubuntu/workspace/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list *ngIf="loginState != true">\n\n      <button menuClose ion-item *ngFor="let p of pagesLogin" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n    <ion-list *ngIf="loginState == true">\n\n      <button menuClose ion-item *ngFor="let p of pagesLogout" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_helper__["a" /* HelperService */],
         __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
@@ -437,7 +436,7 @@ var Constants = {
     API_ENDPOINT: 'https://www.esferasoluciones.com/api/superlist/',
     USER_EMAIL: 'userEmail',
     USER_LOGGEDIN: 'UserLoggedIn',
-    OFFLINE_DATA: [
+    OFFLINE_RECIPES_DATA: [
         {
             id: "1",
             name: "Mini Pizzas",
@@ -478,7 +477,39 @@ var Constants = {
             pricelevel: "danger",
             image: "image5.jpg"
         },
-    ]
+    ],
+    OFFLINE_RECIPE_DATA: {
+        id: "1",
+        name: "Mini Pizza",
+        ingredients: [
+            "Ingredient 1",
+            "Ingredient 2",
+            "Ingredient 3",
+            "Ingredient 4",
+            "Ingredient 5"
+        ],
+        steps: [
+            "instruction 1",
+            "instruction 2",
+            "instruction 3",
+            "instruction 4",
+            "instruction 5",
+            "instruction 6",
+            "instruction 7",
+            "instruction 8",
+            "instruction 9",
+        ],
+        others: [
+            {
+                id: "2",
+                name: "Arroz Chorrerano"
+            },
+            {
+                id: "3",
+                name: "Hamburguesa Big"
+            }
+        ]
+    }
 };
 //# sourceMappingURL=constants.js.map
 
@@ -621,7 +652,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div ng-show="true">\n\n        <div class="list card cardprogram">\n            <form [formGroup]="login" (ngSubmit)="attemptUserLogin()">\n            <div class="item item-body">\n                <label class="lorems lorems-content">\n                   Por favor introduce la información de tu cuenta\n                </label>\n                <br/>\n                <br/>\n                <ion-item>\n                    <ion-input type="text" placeholder="Email" autocapitalize="none" formControlName="email"></ion-input>\n                </ion-item>\n                <br>\n                <ion-item>\n                    <ion-input type="password" placeholder="Contraseña" formControlName="pwd"></ion-input>\n                </ion-item>\n                <br>\n                <input type="submit" class="button button-calm" value="INGRESAR" [disabled]="!login.valid"/>\n                <br>\n                <br>\n                <div ion-button (click)="openRegister()">\n                    REGISTRARSE\n                </div>\n                <div ion-button (click)="openForgot()">\n                    RECUPERAR MI CONTRASEÑA\n                </div>\n\n            </div>\n            </form>\n        </div>\n\n    </div>\n</ion-content>'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/login/login.html"*/
+        selector: 'page-login',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <div ng-show="true">\n\n\n\n        <div class="list card cardprogram">\n\n            <form [formGroup]="login" (ngSubmit)="attemptUserLogin()">\n\n            <div class="item item-body">\n\n                <label class="lorems lorems-content">\n\n                   Por favor introduce la información de tu cuenta\n\n                </label>\n\n                <br/>\n\n                <br/>\n\n                <ion-item>\n\n                    <ion-input type="text" placeholder="Email" autocapitalize="none" formControlName="email"></ion-input>\n\n                </ion-item>\n\n                <br>\n\n                <ion-item>\n\n                    <ion-input type="password" placeholder="Contraseña" formControlName="pwd"></ion-input>\n\n                </ion-item>\n\n                <br>\n\n                <input type="submit" class="button button-calm" value="INGRESAR" [disabled]="!login.valid"/>\n\n                <br>\n\n                <br>\n\n                <div ion-button (click)="openRegister()">\n\n                    REGISTRARSE\n\n                </div>\n\n                <div ion-button (click)="openForgot()">\n\n                    RECUPERAR MI CONTRASEÑA\n\n                </div>\n\n\n\n            </div>\n\n            </form>\n\n        </div>\n\n\n\n    </div>\n\n</ion-content>'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\login\login.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_7__providers_helper__["a" /* HelperService */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
@@ -669,7 +700,7 @@ var HomePage = (function () {
                 _this.events.publish("loginEvent");
             }
         });
-        this.recipes = __WEBPACK_IMPORTED_MODULE_4__services_constants__["a" /* Constants */].OFFLINE_DATA;
+        this.recipes = __WEBPACK_IMPORTED_MODULE_4__services_constants__["a" /* Constants */].OFFLINE_RECIPES_DATA;
     }
     HomePage.prototype.ionViewDidLoad = function () {
     };
@@ -680,7 +711,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item>\n    <ion-input type="text" placeholder="Buscar receta"></ion-input>\n  </ion-item>\n  \n  <ion-list class="recipes">\n    <ion-item class="recipe center" *ngFor="let recipe of recipes" nav-transition="ios" nav-direction="forward">\n      <div class="top" (click)="openRecipe(recipe.id)">\n        <ion-img src="images/{{ recipe.image }}" class="image"></ion-img>\n        <label class="title">{{ recipe.name }}</label>\n      </div>\n      <div class="bottom" (click)="openRecipe(recipe.id)">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-33 class="favorites">\n              <ion-icon ios="ios-star" md="md-star"></ion-icon>{{ recipe.favorites }}\n            </ion-col>\n            <ion-col col-33 class="share">\n              <ion-icon ios="ios-share" md="md-share"></ion-icon>\n            </ion-col>\n            <ion-col col-33 class="pricelevel">\n              <ion-icon color="{{ recipe.pricelevel }}" ios="logo-usd" md="logo-usd"></ion-icon>\n            </ion-col>\n            <ion-col col-33 class="time">\n              <ion-icon ios="ios-timer" md="md-timer"></ion-icon>{{ recipe.time }}mins\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n</ion-content>\n'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <ion-input type="text" placeholder="Buscar receta"></ion-input>\n\n  </ion-item>\n\n  \n\n  <ion-list class="recipes">\n\n    <ion-item class="recipe center" *ngFor="let recipe of recipes" nav-transition="ios" nav-direction="forward">\n\n      <div class="top" (click)="openRecipe(recipe.id)">\n\n        <ion-img src="images/{{ recipe.image }}" class="image"></ion-img>\n\n        <label class="title">{{ recipe.name }}</label>\n\n      </div>\n\n      <div class="bottom" (click)="openRecipe(recipe.id)">\n\n        <ion-grid>\n\n          <ion-row>\n\n            <ion-col col-33 class="favorites">\n\n              <ion-icon ios="ios-star" md="md-star"></ion-icon>{{ recipe.favorites }}\n\n            </ion-col>\n\n            <ion-col col-33 class="share">\n\n              <ion-icon ios="ios-share" md="md-share"></ion-icon>\n\n            </ion-col>\n\n            <ion-col col-33 class="pricelevel">\n\n              <ion-icon color="{{ recipe.pricelevel }}" ios="logo-usd" md="logo-usd"></ion-icon>\n\n            </ion-col>\n\n            <ion-col col-33 class="time">\n\n              <ion-icon ios="ios-timer" md="md-timer"></ion-icon>{{ recipe.time }}mins\n\n            </ion-col>\n\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_helper__["a" /* HelperService */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
@@ -784,7 +815,7 @@ var RegisterPage = (function () {
 }());
 RegisterPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-register',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/register/register.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Registrarse</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div ng-show="true">\n\n        <div class="list card cardprogram">\n            <form [formGroup]="register" (ngSubmit)="attemptUserRegister()">\n            <div class="item item-body">\n                <label class="lorems lorems-content">\n                   Por favor llene sus datos en el siguiente formulario\n                </label>\n                <br/>\n                <br/>\n                <ion-item>\n                    <ion-input type="text" placeholder="Email*" autocapitalize="none" formControlName="email"></ion-input>\n                </ion-item>\n                <br/>\n                <ion-item>\n                    <ion-input type="text" placeholder="Nombre" formControlName="name"></ion-input>\n                </ion-item>\n                <br/> \n                <ion-item>\n                    <ion-input type="text" placeholder="Apellido" formControlName="last_name"></ion-input>\n                </ion-item>\n                <br/>  \n                <ion-item>\n                    <ion-input type="password" placeholder="Contraseña*" formControlName="pwd"></ion-input>\n                </ion-item>\n                <br>\n                <input type="submit" class="button button-calm" value="REGISTRAR" [disabled]="!register.valid"/>\n                <br>\n                <br>\n                <div ion-button (click)="openLogin()">\n                    LOGIN\n                </div>\n                <div ion-button (click)="openForgot()">\n                    RECUPERAR MI CONTRASEÑA\n                </div>\n\n            </div>\n            </form>\n        </div>\n\n    </div>\n</ion-content>'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/register/register.html"*/
+        selector: 'page-register',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\register\register.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Registrarse</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <div ng-show="true">\n\n\n\n        <div class="list card cardprogram">\n\n            <form [formGroup]="register" (ngSubmit)="attemptUserRegister()">\n\n            <div class="item item-body">\n\n                <label class="lorems lorems-content">\n\n                   Por favor llene sus datos en el siguiente formulario\n\n                </label>\n\n                <br/>\n\n                <br/>\n\n                <ion-item>\n\n                    <ion-input type="text" placeholder="Email*" autocapitalize="none" formControlName="email"></ion-input>\n\n                </ion-item>\n\n                <br/>\n\n                <ion-item>\n\n                    <ion-input type="text" placeholder="Nombre" formControlName="name"></ion-input>\n\n                </ion-item>\n\n                <br/> \n\n                <ion-item>\n\n                    <ion-input type="text" placeholder="Apellido" formControlName="last_name"></ion-input>\n\n                </ion-item>\n\n                <br/>  \n\n                <ion-item>\n\n                    <ion-input type="password" placeholder="Contraseña*" formControlName="pwd"></ion-input>\n\n                </ion-item>\n\n                <br>\n\n                <input type="submit" class="button button-calm" value="REGISTRAR" [disabled]="!register.valid"/>\n\n                <br>\n\n                <br>\n\n                <div ion-button (click)="openLogin()">\n\n                    LOGIN\n\n                </div>\n\n                <div ion-button (click)="openForgot()">\n\n                    RECUPERAR MI CONTRASEÑA\n\n                </div>\n\n\n\n            </div>\n\n            </form>\n\n        </div>\n\n\n\n    </div>\n\n</ion-content>'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\register\register.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_7__providers_helper__["a" /* HelperService */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
@@ -862,7 +893,7 @@ var ForgotPage = (function () {
 ForgotPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-forgot',template:/*ion-inline-start:"/home/ubuntu/workspace/src/pages/forgot/forgot.html"*/'<!--\n  Generated template for the ForgotPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>forgot</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <div ng-show="true">\n\n        <div class="list card cardprogram">\n            <form [formGroup]="forgot" (ngSubmit)="attemptUserForgot()">\n                <div class="item item-body">\n                    <div margin-bottom padding class="card-triky"><label>\n                   <ion-icon name="information-circle"></ion-icon> Por favor introduce la información de tu cuenta\n                </label>\n                    </div>\n                    <div margin-bottom padding class="card-triky">\n\n                        <ion-item *ngIf="!showSent">\n                            <ion-input type="email" placeholder="Email" autocapitalize="none" formControlName="email"></ion-input>\n                        </ion-item>\n\n                    </div>\n                    <div style="text-align:center">\n                        <br *ngIf="!showSent">\n                        <button ion-button full type="submit" class="button button-calm" [disabled]="!forgot.valid" *ngIf="!showSent">ENVIAR</button>\n                        <!--<br *ngIf="!showSent">-->\n                        <!--<br *ngIf="!showSent">-->\n                        <label class="lorems lorems-content" *ngIf="showSent">\n                   Una nueva contraseña ha sido enviada a la direccion de correo que envio<br>Por favor, le recomendamos que la cambie tan pronto vuelva a entrar\n                </label>\n                        <br/>\n                        <div ion-button clear (click)="openRegister()">\n                            Registrarse\n                        </div>\n                        <br/>\n                        <div ion-button clear (click)="openLogin()">\n                            Login\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/home/ubuntu/workspace/src/pages/forgot/forgot.html"*/,
+        selector: 'page-forgot',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\forgot\forgot.html"*/'<!--\n\n  Generated template for the ForgotPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>forgot</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <div ng-show="true">\n\n\n\n        <div class="list card cardprogram">\n\n            <form [formGroup]="forgot" (ngSubmit)="attemptUserForgot()">\n\n                <div class="item item-body">\n\n                    <div margin-bottom padding class="card-triky"><label>\n\n                   <ion-icon name="information-circle"></ion-icon> Por favor introduce la información de tu cuenta\n\n                </label>\n\n                    </div>\n\n                    <div margin-bottom padding class="card-triky">\n\n\n\n                        <ion-item *ngIf="!showSent">\n\n                            <ion-input type="email" placeholder="Email" autocapitalize="none" formControlName="email"></ion-input>\n\n                        </ion-item>\n\n\n\n                    </div>\n\n                    <div style="text-align:center">\n\n                        <br *ngIf="!showSent">\n\n                        <button ion-button full type="submit" class="button button-calm" [disabled]="!forgot.valid" *ngIf="!showSent">ENVIAR</button>\n\n                        <!--<br *ngIf="!showSent">-->\n\n                        <!--<br *ngIf="!showSent">-->\n\n                        <label class="lorems lorems-content" *ngIf="showSent">\n\n                   Una nueva contraseña ha sido enviada a la direccion de correo que envio<br>Por favor, le recomendamos que la cambie tan pronto vuelva a entrar\n\n                </label>\n\n                        <br/>\n\n                        <div ion-button clear (click)="openRegister()">\n\n                            Registrarse\n\n                        </div>\n\n                        <br/>\n\n                        <div ion-button clear (click)="openLogin()">\n\n                            Login\n\n                        </div>\n\n                    </div>\n\n                </div>\n\n            </form>\n\n        </div>\n\n\n\n    </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\forgot\forgot.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__providers_helper__["a" /* HelperService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
 ], ForgotPage);

@@ -11,17 +11,17 @@ import { RecipePage } from '../recipe/recipe';
 })
 export class HomePage {
     private recipes : any;
-  
-  constructor(public navCtrl: NavController, public helper : HelperService, private storage : Storage, 
+
+  constructor(public navCtrl: NavController, public helper : HelperService, private storage : Storage,
     public events : Events) {
     this.storage.get(Constants.USER_LOGGEDIN).then((value)=>{
       if(value=='true'){
         this.events.publish("loginEvent");
       }
     });
-    this.recipes = Constants.OFFLINE_DATA;
+    this.recipes = Constants.OFFLINE_RECIPES_DATA;
   }
-  
+
   ionViewDidLoad(){
   }
 
