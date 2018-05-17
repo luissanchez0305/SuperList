@@ -1,0 +1,17 @@
+[01-Mar-2018 18:41:15 UTC] PHP Notice:  Undefined variable: root in /home/espheras/public_html/api/superlist/mail.php on line 9
+[01-Mar-2018 18:41:15 UTC] PHP Warning:  include(/controllers/helper.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/mail.php on line 9
+[01-Mar-2018 18:41:15 UTC] PHP Warning:  include(): Failed opening '/controllers/helper.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/mail.php on line 9
+[01-Mar-2018 18:41:15 UTC] PHP Fatal error:  Call to undefined function retrieveJsonPostData() in /home/espheras/public_html/api/superlist/mail.php on line 11
+[01-Mar-2018 18:48:59 UTC] PHP Notice:  Undefined variable: root in /home/espheras/public_html/api/superlist/mail.php on line 9
+[01-Mar-2018 18:48:59 UTC] PHP Warning:  include(/controllers/helper.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/mail.php on line 9
+[01-Mar-2018 18:48:59 UTC] PHP Warning:  include(): Failed opening '/controllers/helper.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/mail.php on line 9
+[01-Mar-2018 18:48:59 UTC] PHP Fatal error:  Call to undefined function retrieveJsonPostData() in /home/espheras/public_html/api/superlist/mail.php on line 11
+[01-Mar-2018 18:49:49 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 22
+[01-Mar-2018 18:52:59 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21
+[01-Mar-2018 19:13:05 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21
+[01-Mar-2018 21:23:41 UTC] PHP Notice:  Uninitialized string offset: 50 in /home/espheras/public_html/api/superlist/mail.php on line 51
+[01-Mar-2018 21:23:41 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21
+[01-Mar-2018 21:25:23 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21
+[04-Mar-2018 07:11:01 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21
+[04-Mar-2018 07:13:22 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21
+[04-Mar-2018 07:22:50 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/espheras/public_html/api/superlist/mail.php on line 21

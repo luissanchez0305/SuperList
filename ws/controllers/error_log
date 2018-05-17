@@ -1,0 +1,66 @@
+[09-Oct-2017 03:07:41 UTC] PHP Warning:  include(/home/espheras/public_html/config.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:07:41 UTC] PHP Warning:  include(): Failed opening '/home/espheras/public_html/config.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:07:41 UTC] PHP Warning:  require(/home/espheras/public_html/entities/categoria.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:07:41 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/entities/categoria.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:07:46 UTC] PHP Warning:  include(/home/espheras/public_html/config.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:07:46 UTC] PHP Warning:  include(): Failed opening '/home/espheras/public_html/config.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:07:46 UTC] PHP Warning:  require(/home/espheras/public_html/entities/categoria.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:07:46 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/entities/categoria.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:07:48 UTC] PHP Warning:  include(/home/espheras/public_html/config.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:07:48 UTC] PHP Warning:  include(): Failed opening '/home/espheras/public_html/config.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:07:48 UTC] PHP Warning:  require(/home/espheras/public_html/entities/categoria.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:07:48 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/entities/categoria.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:08:04 UTC] PHP Warning:  include(/home/espheras/public_html/config.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:08:04 UTC] PHP Warning:  include(): Failed opening '/home/espheras/public_html/config.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 3
+[09-Oct-2017 03:08:04 UTC] PHP Warning:  require(/home/espheras/public_html/entities/categoria.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:08:04 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/entities/categoria.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 5
+[09-Oct-2017 03:14:39 UTC] PHP Warning:  include(/home/espheras/public_html/config.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 4
+[09-Oct-2017 03:14:39 UTC] PHP Warning:  include(): Failed opening '/home/espheras/public_html/config.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 4
+[09-Oct-2017 03:14:39 UTC] PHP Warning:  require(/home/espheras/public_html/entities/categoria.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 6
+[09-Oct-2017 03:14:39 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/entities/categoria.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 6
+[09-Oct-2017 03:20:04 UTC] PHP Warning:  require(/home/espheras/public_html/api/superlist/mappers/lista.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 10
+[09-Oct-2017 03:20:04 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/api/superlist/mappers/lista.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 10
+[09-Oct-2017 03:23:58 UTC] PHP Warning:  require(/home/espheras/public_html/api/superlist/mappers/producto_lista.php): failed to open stream: No such file or directory in /home/espheras/public_html/api/superlist/controllers/db.php on line 14
+[09-Oct-2017 03:23:58 UTC] PHP Fatal error:  require(): Failed opening required '/home/espheras/public_html/api/superlist/mappers/producto_lista.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/espheras/public_html/api/superlist/controllers/db.php on line 14
+[09-Oct-2017 03:33:51 UTC] PHP Notice:  Undefined index: type in /home/espheras/public_html/api/superlist/controllers/user.php on line 9
+[09-Oct-2017 03:35:17 UTC] PHP Notice:  Undefined index: type in /home/espheras/public_html/api/superlist/controllers/user.php on line 9
+[09-Oct-2017 03:56:39 UTC] PHP Fatal error:  Call to undefined function hash_password() in /home/espheras/public_html/api/superlist/controllers/user.php on line 21
+[01-Mar-2018 21:55:17 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 21:55:17 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 21:55:17 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 21:56:34 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 21:56:34 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 21:56:34 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:07:30 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:07:30 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:07:30 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:08:07 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:08:07 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:08:07 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:08:31 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:08:31 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:08:31 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:11:33 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:11:33 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:11:33 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:11:33 UTC] PHP Catchable fatal error:  Object of class Entity\Mapper\Usuario could not be converted to string in /home/espheras/public_html/api/superlist/controllers/user.php on line 64
+[01-Mar-2018 22:12:26 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:12:26 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:12:26 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:17:51 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:17:51 UTC] PHP Notice:  Undefined variable: apellido in /home/espheras/public_html/api/superlist/controllers/user.php on line 45
+[01-Mar-2018 22:18:02 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:18:02 UTC] PHP Notice:  Undefined variable: apellido in /home/espheras/public_html/api/superlist/controllers/user.php on line 45
+[01-Mar-2018 22:19:53 UTC] PHP Notice:  Undefined property: stdClass::$p in /home/espheras/public_html/api/superlist/controllers/user.php on line 37
+[01-Mar-2018 22:22:57 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:22:57 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:25:26 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:25:26 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:26:26 UTC] PHP Notice:  Undefined property: stdClass::$a in /home/espheras/public_html/api/superlist/controllers/user.php on line 39
+[01-Mar-2018 22:26:26 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:27:20 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:27:40 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[01-Mar-2018 22:39:53 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[05-Mar-2018 02:27:56 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[05-Mar-2018 02:31:39 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40
+[05-Mar-2018 02:38:48 UTC] PHP Notice:  Undefined property: stdClass::$id in /home/espheras/public_html/api/superlist/controllers/user.php on line 40

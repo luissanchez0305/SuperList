@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ForgotPage } from '../pages/forgot/forgot';
 import { RecipePage } from '../pages/recipe/recipe';
+import { ListsPage } from '../pages/lists/lists';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,8 @@ import { HelperService } from '../providers/helper'
     LoginPage,
     RegisterPage,
     ForgotPage,
-    RecipePage
+    RecipePage,
+    ListsPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { HelperService } from '../providers/helper'
     LoginPage,
     RegisterPage,
     ForgotPage,
-    RecipePage
+    RecipePage,
+    ListsPage
   ],
   providers: [
     StatusBar,

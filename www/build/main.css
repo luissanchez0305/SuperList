@@ -25218,3 +25218,38 @@ page-home .recipes .recipe .title {
   background-color: #f0f0f0;
   padding: 0px 10px;
 }
+
+page-lists div.list-container {
+  padding: 20px;
+}
+
+page-lists button.open-list {
+  height: 50px;
+}
+
+page-lists .add-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+page-lists .delete-button {
+  position: relative;
+  bottom: 50px;
+  left: 0px;
+  float: right;
+}
+
+page-lists .delete-button ion-icon {
+  font-size: 30px !important;
+}

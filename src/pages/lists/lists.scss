@@ -1,0 +1,32 @@
+page-lists {
+    div.list-container{
+        padding: 20px;
+    }
+    button.open-list{
+        height: 50px;
+    }
+    .add-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    .delete-button {    
+        position: relative;
+        bottom: 50px;
+        left: 0px;
+        float: right;
+    }
+    .delete-button ion-icon{
+        font-size: 30px !important;
+    }
+}
