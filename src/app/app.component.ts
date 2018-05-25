@@ -6,7 +6,7 @@ import { HelperService } from '../providers/helper';
 import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { ListsPage } from '../pages/lists/lists';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { Constants } from '../services/constants';
@@ -23,25 +23,25 @@ export class MyApp {
   pagesLogin: Array<{title: string, component: any, method: string }>;
   pagesLogout: Array<{title: string, component: any, method: string }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public helper : HelperService,
-        private storage : Storage, public events : Events) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    public helper : HelperService, private storage : Storage, public events : Events) {
     this.initializeApp();
     this.events.subscribe('loginEvent', () => {
       this.helper.loginState = this.loginState = true;
-    }); 
-    
+    });
+
     this.loginState = this.helper.loginState;
     // used for an example of ngFor and navigation
     this.pagesLogin = [
       { title: 'Registro/Login', component: LoginPage, method:'' },
       { title: 'Home', component: HomePage, method:'' },
-      { title: 'List', component: ListPage, method:'' }
+      { title: 'Mis listas', component: ListsPage, method:'' }
     ];
     // used for an example of ngFor and navigation
     this.pagesLogout = [
       { title: 'Perfil', component: RegisterPage, method:''},
       { title: 'Home', component: HomePage, method:'' },
-      { title: 'List', component: ListPage, method:''},
+      { title: 'Mis listas', component: ListsPage, method:''},
       { title: 'Logout', component: LoginPage, method:'logout' }
     ];
 
@@ -55,7 +55,7 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
-  
+
   logout(){
     let view = this.nav.getActive();
     if(view.name == 'RegisterPage')

@@ -1,5 +1,6 @@
 export var Constants = {
     API_ENDPOINT : 'https://www.esferasoluciones.com/api/superlist/',
+    //API_ENDPOINT : '/ws',
     USER_EMAIL: 'userEmail',
     USER_LOGGEDIN: 'UserLoggedIn',
     OFFLINE_RECIPES_DATA: [
@@ -76,6 +77,53 @@ export var Constants = {
                 name: "Hamburguesa Big"
             }
         ]
+    },
+    OFFLINE_LISTS_DATA: [
+        {
+            id: "1",
+            name: "Lista de super"
+        },
+        {
+            id: "2",
+            name: "Lista de compras"
+        },
+        {
+            id: "3",
+            name: "Wishlist"
+        }
+    ],
+    OFFLINE_LIST_DATA:{
+        id: "1",
+        name:"Lista de super",
+        products:[
+            {
+                id: "1",
+                name: "Leche",
+                qty: "2",
+                checked: false,
+                show: true
+            },
+            {
+                id: "2",
+                name: "Pan Integral",
+                qty: "1",
+                checked: false,
+                show: true
+            },
+            {
+                id: "3",
+                name: "Pan de moña",
+                qty: "2",
+                checked: true,
+                show: true
+            },
+            {
+                id: "4",
+                name: "Manzanas",
+                qty: "5",
+                checked: false,
+                show: true
+            }
+        ]
     }
-
 };

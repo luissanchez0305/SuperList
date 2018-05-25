@@ -27,15 +27,15 @@ export class LoginPage {
           pwd: ['', Validators.required],
         });
     }
-    
+
     openRegister(){
         this.navCtrl.setRoot(RegisterPage);
     }
-    
+
     openForgot(){
         this.navCtrl.setRoot(ForgotPage);
     }
-    
+
     attemptUserLogin() {
         var data = { type : 'cred', e : this.login.value.email, p : this.login.value.pwd };
         this.authService.postData(data,'controllers/user.php').then((result) => {
@@ -58,5 +58,5 @@ export class LoginPage {
               this.helper.gapAlert('Error en logueao', err);
         });
     }
-    
+
 }

@@ -1,23 +1,39 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
+
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
+    <ion-title>{{ name }}</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
+
+<ion-content padding>
+  <ion-list class="recipes">
+    <ion-row *ngFor="let product of products" nav-transition="ios" nav-direction="forward">
+        <ion-item *ngIf="product.show" class="top-item">
+          <div style="">
+            <div [ngClass]="{'scratch-text': product.checked}" style="float: left; width:10%;">
+              {{ product.name }}
+            </div>
+            <div style="float: right; width:10%;">
+              {{ product.qty }}
+            </div>
+          </div>
+        </ion-item>
+        <ion-item *ngIf="product.show">
+          <button class="decrease-button" (click)="decrease_product(product)"><ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon></button>
+          <button class="increase-button" (click)="increase_product(product)"><ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon></button>
+          <button class="delete-button" (click)="delete_product(product)"><ion-icon name="trash"></ion-icon></button>
+          <button class="check-button" *ngIf="!product.checked" (click)="check_product(product)"><ion-icon name="square-outline"></ion-icon></button>
+          <button class="check-button" *ngIf="product.checked" (click)="check_product(product)"><ion-icon name="checkbox-outline"></ion-icon></button>
+        </ion-item>
+    </ion-row>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <button class="add-button" (click)="add_product_modal()"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
 </ion-content>
