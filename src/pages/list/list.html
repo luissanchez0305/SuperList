@@ -18,7 +18,7 @@
     <ion-row *ngFor="let product of products" nav-transition="ios" nav-direction="forward">
         <ion-item *ngIf="product.show" class="top-item">
           <div style="">
-            <div [ngClass]="{'scratch-text': product.checked}" style="float: left; width:10%;">
+            <div [ngClass]="{'scratch-text': product.checked}" style="float: left; width:10%;" (click)="check_product(product)">
               {{ product.name }}
             </div>
             <div style="float: right; width:10%;">
@@ -29,9 +29,8 @@
         <ion-item *ngIf="product.show">
           <button class="decrease-button" (click)="decrease_product(product)"><ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon></button>
           <button class="increase-button" (click)="increase_product(product)"><ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon></button>
-          <button class="delete-button" (click)="delete_product(product)"><ion-icon name="trash"></ion-icon></button>
-          <button class="check-button" *ngIf="!product.checked" (click)="check_product(product)"><ion-icon name="square-outline"></ion-icon></button>
-          <button class="check-button" *ngIf="product.checked" (click)="check_product(product)"><ion-icon name="checkbox-outline"></ion-icon></button>
+          <button class="delete-button" (click)="delete_product(product)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>
+          <button class="check-button" (click)="edit_product(product)"><ion-icon ios="ios-create" md="md-create"></ion-icon></button>
         </ion-item>
     </ion-row>
   </ion-list>

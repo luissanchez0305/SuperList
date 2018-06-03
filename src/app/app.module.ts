@@ -12,7 +12,6 @@ import { RegisterPage } from '../pages/register/register';
 import { ForgotPage } from '../pages/forgot/forgot';
 import { RecipePage } from '../pages/recipe/recipe';
 import { ListsPage } from '../pages/lists/lists';
-//import { AddProductModalPage } from '../pages/add-product-modal/add-product-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

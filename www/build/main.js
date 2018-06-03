@@ -1,4 +1,4 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,7 +6,7 @@ webpackJsonp([5],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecipePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_constants__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55,7 +55,7 @@ RecipePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_constants__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -66,7 +66,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -87,7 +86,23 @@ var ListPage = (function () {
         this.products = __WEBPACK_IMPORTED_MODULE_2__services_constants__["a" /* Constants */].OFFLINE_LIST_DATA.products;
         this.events.subscribe('addNewProduct', function (name, qty) {
             //call methods to refresh content
-            _this.add_product(name, qty);
+            _this.products.push({
+                id: "0",
+                name: name,
+                qty: qty,
+                checked: false,
+                show: true
+            });
+        });
+        this.events.subscribe('editProduct', function (id, name, qty) {
+            for (var i = 0; i < _this.products.length; i++) {
+                var item = _this.products[i];
+                if (item.id == id) {
+                    _this.products[i].name = name;
+                    _this.products[i].qty = qty;
+                    break;
+                }
+            }
         });
     }
     ListPage.prototype.ionViewDidLoad = function () {
@@ -100,17 +115,12 @@ var ListPage = (function () {
         if (item.qty > 0)
             item.qty = Number(item.qty) - 1;
     };
-    ListPage.prototype.add_product = function (name, qty) {
-        this.products.push({
-            id: "0",
-            name: name,
-            qty: qty,
-            checked: false,
-            show: true
-        });
-    };
     ListPage.prototype.add_product_modal = function () {
-        var modalPage = this.modalCtrl.create('AddProductModalPage');
+        var modalPage = this.modalCtrl.create('ModalManageProductPage');
+        modalPage.present();
+    };
+    ListPage.prototype.edit_product = function (item) {
+        var modalPage = this.modalCtrl.create('ModalManageProductPage', { id: item.id, name: item.name, qty: item.qty });
         modalPage.present();
     };
     ListPage.prototype.check_product = function (item) {
@@ -124,7 +134,7 @@ var ListPage = (function () {
 ListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-list',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\list\list.html"*/'<!--\n  Generated template for the ListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ name }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list class="recipes">\n    <ion-row *ngFor="let product of products" nav-transition="ios" nav-direction="forward">\n        <ion-item *ngIf="product.show" class="top-item">\n          <div style="">\n            <div [ngClass]="{\'scratch-text\': product.checked}" style="float: left; width:10%;">\n              {{ product.name }}\n            </div>\n            <div style="float: right; width:10%;">\n              {{ product.qty }}\n            </div>\n          </div>\n        </ion-item>\n        <ion-item *ngIf="product.show">\n          <button class="decrease-button" (click)="decrease_product(product)"><ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon></button>\n          <button class="increase-button" (click)="increase_product(product)"><ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon></button>\n          <button class="delete-button" (click)="delete_product(product)"><ion-icon name="trash"></ion-icon></button>\n          <button class="check-button" *ngIf="!product.checked" (click)="check_product(product)"><ion-icon name="square-outline"></ion-icon></button>\n          <button class="check-button" *ngIf="product.checked" (click)="check_product(product)"><ion-icon name="checkbox-outline"></ion-icon></button>\n        </ion-item>\n    </ion-row>\n  </ion-list>\n  <button class="add-button" (click)="add_product_modal()"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n</ion-content>\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\list\list.html"*/,
+        selector: 'page-list',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\list\list.html"*/'<!--\n  Generated template for the ListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ name }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list class="recipes">\n    <ion-row *ngFor="let product of products" nav-transition="ios" nav-direction="forward">\n        <ion-item *ngIf="product.show" class="top-item">\n          <div style="">\n            <div [ngClass]="{\'scratch-text\': product.checked}" style="float: left; width:10%;" (click)="check_product(product)">\n              {{ product.name }}\n            </div>\n            <div style="float: right; width:10%;">\n              {{ product.qty }}\n            </div>\n          </div>\n        </ion-item>\n        <ion-item *ngIf="product.show">\n          <button class="decrease-button" (click)="decrease_product(product)"><ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon></button>\n          <button class="increase-button" (click)="increase_product(product)"><ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon></button>\n          <button class="delete-button" (click)="delete_product(product)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n          <button class="check-button" (click)="edit_product(product)"><ion-icon ios="ios-create" md="md-create"></ion-icon></button>\n        </ion-item>\n    </ion-row>\n  </ion-list>\n  <button class="add-button" (click)="add_product_modal()"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n</ion-content>\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\list\list.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
 ], ListPage);
@@ -139,7 +149,7 @@ ListPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_constants__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_list__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -162,9 +172,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ListsPage = (function () {
-    function ListsPage(navCtrl, navParams) {
+    function ListsPage(navCtrl, navParams, modalCtrl, events) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
+        this.events = events;
+        this.events.subscribe('addNewList', function (name) {
+            //call methods to refresh content
+            _this.lists.push({
+                id: "0",
+                name: name
+            });
+        });
     }
     ListsPage.prototype.ionViewDidLoad = function () {
         this.lists = __WEBPACK_IMPORTED_MODULE_2__services_constants__["a" /* Constants */].OFFLINE_LISTS_DATA;
@@ -173,6 +193,10 @@ var ListsPage = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__list_list__["a" /* ListPage */]);
     };
     ListsPage.prototype.add_list = function () {
+        var modalPage = this.modalCtrl.create('ModalManageListPage');
+        modalPage.present();
+    };
+    ListsPage.prototype.edit_list = function () {
     };
     ListsPage.prototype.del_list = function () {
     };
@@ -183,9 +207,10 @@ ListsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-lists',template:/*ion-inline-start:"c:\Users\lsanc\projects\SuperList\src\pages\lists\lists.html"*/'<!--\n\n  Generated template for the ListsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Mis Listas</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div class="list-container" *ngFor="let list of lists">\n\n    <button class = "open-list button button-block button-large button-assertive icon ion-left ion-asterisk" (click)="get_list(list.id)">\n\n       {{ list.name }}\n\n    </button>\n\n    <button class="delete-button" (click)="del_list(list.id)"><ion-icon ios="ios-close" md="md-close"></ion-icon></button>\n\n  </div>\n\n  <button class="add-button" (click)="add_list()"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\lsanc\projects\SuperList\src\pages\lists\lists.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]) === "function" && _d || Object])
 ], ListsPage);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=lists.js.map
 
 /***/ }),
@@ -211,25 +236,29 @@ webpackEmptyAsyncContext.id = 118;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/add-product-modal/add-product-modal.module": [
-		285,
-		0
-	],
 	"../pages/forgot/forgot.module": [
 		284,
-		4
+		5
 	],
 	"../pages/list/list.module": [
 		282,
-		3
+		4
 	],
 	"../pages/lists/lists.module": [
 		283,
-		2
+		3
+	],
+	"../pages/modal-manage-list/modal-manage-list.module": [
+		285,
+		1
+	],
+	"../pages/modal-manage-product/modal-manage-product.module": [
+		286,
+		0
 	],
 	"../pages/recipe/recipe.module": [
 		281,
-		1
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -269,7 +298,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_dialogs__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(33);
@@ -304,7 +333,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { AddProductModalPage } from '../pages/add-product-modal/add-product-modal';
 
 
 
@@ -335,7 +363,8 @@ AppModule = __decorate([
                     { loadChildren: '../pages/list/list.module#ListPageModule', name: 'ListPage', segment: 'list', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/lists/lists.module#ListsPageModule', name: 'ListsPage', segment: 'lists', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/forgot/forgot.module#ForgotPageModule', name: 'ForgotPage', segment: 'forgot', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/add-product-modal/add-product-modal.module#AddProductModalPageModule', name: 'AddProductModalPage', segment: 'add-product-modal', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/modal-manage-list/modal-manage-list.module#ModalManageListPageModule', name: 'ModalManageListPage', segment: 'modal-manage-list', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/modal-manage-product/modal-manage-product.module#ModalManageProductPageModule', name: 'ModalManageProductPage', segment: 'modal-manage-product', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
@@ -510,7 +539,7 @@ var Constants = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_helper__ = __webpack_require__(32);
@@ -729,7 +758,7 @@ AuthService = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(52);
@@ -826,7 +855,7 @@ LoginPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_helper__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_constants__ = __webpack_require__(25);
@@ -885,7 +914,7 @@ HomePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(52);
@@ -989,7 +1018,7 @@ RegisterPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgotPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_helper__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__ = __webpack_require__(50);

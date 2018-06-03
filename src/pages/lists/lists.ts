@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events, ModalController } from 'ionic-angular';
 import { Constants } from '../../services/constants';
 import { ListPage } from '../list/list';
 
@@ -18,12 +18,18 @@ import { ListPage } from '../list/list';
 export class ListsPage {
   private lists : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl : ModalController, public events : Events) {
+        this.events.subscribe('addNewList',(name) => {
+            //call methods to refresh content
+            this.lists.push({
+                        id: "0",
+                        name: name
+                      });
+        });
   }
 
   ionViewDidLoad() {
     this.lists = Constants.OFFLINE_LISTS_DATA;
-
   }
 
   get_list(id){
@@ -31,6 +37,11 @@ export class ListsPage {
   }
 
   add_list(){
+    var modalPage = this.modalCtrl.create('ModalManageListPage');
+    modalPage.present();
+  }
+
+  edit_list(){
 
   }
 

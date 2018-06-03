@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events, ModalController } from 'ionic-angular';
 import { Constants } from '../../services/constants';
-import { ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the ListPage page.
@@ -25,7 +24,24 @@ export class ListPage {
 
         this.events.subscribe('addNewProduct',(name, qty) => {
             //call methods to refresh content
-            this.add_product(name, qty);
+            this.products.push({
+                        id: "0",
+                        name: name,
+                        qty: qty,
+                        checked: false,
+                        show: true
+                      });
+        });
+
+        this.events.subscribe('editProduct',(id, name, qty) => {
+            for(var i = 0; i < this.products.length; i++){
+              var item = this.products[i];
+              if(item.id == id){
+                this.products[i].name = name;
+                this.products[i].qty = qty;
+                break;
+              }
+            }
         });
     }
 
@@ -42,18 +58,13 @@ export class ListPage {
       item.qty = Number(item.qty) - 1;
   }
 
-  add_product(name, qty){
-    this.products.push({
-                id: "0",
-                name: name,
-                qty: qty,
-                checked: false,
-                show: true
-              });
+  add_product_modal(){
+    var modalPage = this.modalCtrl.create('ModalManageProductPage');
+    modalPage.present();
   }
 
-  add_product_modal(){
-    var modalPage = this.modalCtrl.create('AddProductModalPage');
+  edit_product(item){
+    var modalPage = this.modalCtrl.create('ModalManageProductPage', { id: item.id, name: item.name, qty: item.qty });
     modalPage.present();
   }
 
